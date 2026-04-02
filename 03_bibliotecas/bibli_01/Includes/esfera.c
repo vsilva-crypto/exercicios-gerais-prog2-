@@ -1,6 +1,5 @@
 #include "esfera_utils.h"
 
-#define PI 3.14159
 
 float calcula_volume (float R)
 {
