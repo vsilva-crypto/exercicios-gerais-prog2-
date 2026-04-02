@@ -3,9 +3,9 @@
 
 float calcula_volume (float R)
 {
-    float volume;
-    volume = (4 * PI * (R * R * R)) / 3.0;
-    return volume;
+    float Volume;
+    Volume = (4 * PI * (R * R * R)) / 3.0;
+    return Volume;
 }
 
 float calcula_area (float R)
