@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "matrix_utils.h"
 
 void matrix_read(int rows, int cols, int matrix[rows][cols])
@@ -23,7 +24,11 @@ void matrix_print(int rows, int cols, int matrix[rows][cols])
 
         for (j = 0; j < cols; j++)
         {
-            printf ("%d", matrix[i][j]);
+            if (j < cols - 1)
+                printf ("%d ", matrix[i][j]);
+            
+            else 
+                printf ("%d", matrix[i][j]);
         }
 
         printf ("|");
@@ -50,14 +55,6 @@ void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1],
     int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1])
 {
     int i, j;
-    int possible;
-    possible = possible_matrix_sum(rows1, cols1, rows2, cols2);
-
-    if (!possible)
-    {
-        printf ("Erro: as dimensoes da matriz nao correspondem\n");
-        return;
-    } 
 
     for (i = 0; i < rows1; i++)
     {
@@ -72,14 +69,6 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1],
     int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1])
 {
     int i, j;
-    int possible;
-    possible = possible_matrix_sub(rows1, cols1, rows2, cols2);
-
-    if (!possible)
-    {
-        printf ("Erro: as dimensoes da matriz nao correspondem\n");
-        return;
-    } 
 
     for (i = 0; i < rows1; i++)
     {
@@ -94,14 +83,6 @@ void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1],
     int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols2])
 {
     int i, j, k;
-    int possible;
-    possible = possible_matrix_multiply(cols1, rows2);
-
-    if (!possible)
-    {
-        printf ("Erro: o numero de colunas da primeira matriz eh diferente do numero de linhas da segunda matriz\n");
-        return;
-    }
 
     for (i = 0; i < rows1; i++)
     {
