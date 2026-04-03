@@ -28,7 +28,7 @@ void interageComMenuDeOpcoes(int linhas1, int linhas2, int colunas1, int colunas
 
         if (escolha == 1)
         {
-            ehPossivel = possible_matrix_sum(linhas1, linhas2, colunas1, colunas2);
+            ehPossivel = possible_matrix_sum(linhas1, colunas1, linhas2, colunas2);
             if (!ehPossivel)
             {
                 printf ("Erro: as dimensoes da matriz nao correspondem\n\n");
@@ -42,7 +42,7 @@ void interageComMenuDeOpcoes(int linhas1, int linhas2, int colunas1, int colunas
 
         else if (escolha == 2)
         {
-            ehPossivel = possible_matrix_sum(linhas1, linhas2, colunas1, colunas2);
+            ehPossivel = possible_matrix_sum(linhas1, colunas1, linhas2, colunas2);
             if (!ehPossivel)
             {
                 printf ("Erro: as dimensoes da matriz nao correspondem\n\n");
@@ -93,12 +93,12 @@ void interageComMenuDeOpcoes(int linhas1, int linhas2, int colunas1, int colunas
         else if (escolha == 5)
         {
             transpose_matrix(linhas1, colunas1, matriz1, matrizFinal);
-            matrix_print(linhas1, colunas1, matrizFinal); 
+            matrix_print(colunas1, linhas1, matrizFinal); 
             
             printf ("\n");
             
             transpose_matrix(linhas2, colunas2, matriz2, matrizFinal);  
-            matrix_print(linhas2, colunas2, matrizFinal);
+            matrix_print(colunas2, linhas2, matrizFinal);
         }
 
         printf ("\n");
